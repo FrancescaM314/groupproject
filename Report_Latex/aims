@@ -1,0 +1,182 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[]{algorithm2e}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{subcaption}
+\usepackage{float}
+
+
+
+
+
+\begin{document}
+\begin{center}
+\large{Group Project\\7CCSMGPR} \\
+\large{Dr. Laurence Tratt}
+
+\bigskip
+
+\Huge{Development of a Chatting Platform}
+
+\bigskip
+
+\Large{T. Avula, S. Bhatt, P. Bharti, \\S. Mohan, F. Mosca, M. Smith} \\
+
+\bigskip
+
+\large{\today}
+\end{center}
+
+\bigskip
+
+
+\section{Project Description}
+\subsection{Main goals and strategy}
+\subsection{Aims and Strategy}
+In this project we are using Python 2.7 language.our aim is to develop a
+client server program. there will be two program one is Client and other is
+Server. Client will run on one computer e.g Computer A and server will run
+on another computer B. We will send a Hello message from Client to Server.
+When the Server receive Hello message , after listening to client it will send
+HI to client. client and server will be recognized by their IP address.There
+can be multiple clients which can send messages at a time. A server explains
+a socket and binds an IP address and port to it. If binding is successful, then
+it starts to listen to that socket for incoming connections. A client sends a
+connection request to related IP and port and the socket server listening to
+that port accepts it. After the server accepts a client request, a connection
+is established. You can send and receive data through that connection while
+the connection is active. If the client connection is closed, the Server should
+accept it again. accept step is done once for each new connection and that
+connection do not needed to be accepted again while it was active. A server
+should have a specific IP and port so the client can connect it. A server could
+not connect to a client since client does not have any socket bound to a specific
+IP and port for listening incoming connections. Client 1 sends a message,
+the message should be received by the server since only servers can accept
+connections (thus, a client can not establish a connection to another client
+since another client can not accept any incoming connection). The server
+receives the message and sent it to client 2 Since a server could not establish
+a connection to a client, Client 2 should be already connected. Otherwise,
+the server should wait for the client 2 to establish a connection so it can send
+data. From that point of view, all clients should be connected to the server
+and keep those connections alive. A Client may have an active connection
+while it was communicating, and close that connection a while after it was
+idle for a specic time. But the client should establish connections to server
+and checks if it has any data waiting to be transferred to himself. So keeping
+the relationship alive looks like a better approach. There are protocols like
+TCP and UDP, and you dene the socket as a TCP socket or a UDP socket.
+But these protocols have many details, and for simplicity, I can mention
+that TCP protocol is error-checked and controls if sent data is received by
+the receiver application (Instant messaging services 1 told you whether your
+message sent is successful or not, so this is TCP). UDP have no error-check
+mechanism (So you just send the package but do not be confirmed whether
+1
+it is delivered or not). Client/server describes the relationship between two
+computer programs in which one program, the client, makes a service request
+from another program, the server, which fulfilled- the request. Although
+programs within a single computer can use the client/server idea, it is a more
+important idea in a network. In a network, the client/server model provides
+a convenient way to interconnect programs that are distributed efficiently
+across different locations.
+\subsection{Mandatory Features}
+-Registering for an account (includes giving username,emails,first and last name)
+-Logging on and logging out account of the user. 
+-Set status (at first just red and green)
+-Send message to one person or multiple people at a time.
+-Receive message from one/many users at a time
+-Send images/location
+-Backup chats to dropbox(or others)
+-Be able to set name/profile picture 
+-Remove messages
+-Be able to delete account
+-Sync contacts/ or have to add people via username 
+-Time that chat is sent/opened  
+-Encrypted chats.
+-Can see when someone was online last.
+
+
+\subsection{Optional Features}
+-Have ability to send gifs from external/internal keyboard
+-Have filtered and unfiltered messages (those who are not in your contact list /that you don't know/blocked list )
+-Have functionality that allows you to make temporary chats for a set amount of time either a week or a day or maybe a certain day etc. ( example of use: you are going to an event or gathering with a particular subset of friends you can create a temporary group that will delete automatically after the date/time specified )
+-Customise chat background 
+-Be able to have font styles
+-Search through chats
+
+\subsection{Project timetable}
+
+\subsection{Advancement}
+
+
+
+\section{Project Organisation}
+\subsection{Working together as a team}
+The forms of communication used between the team members are the following:
+\begin{itemize}
+\item An initial kick-off meeting was held where the scope and requirements of the project were discussed and the mandatory/optional features that can be built into the system were outlined.
+\item Physical meetings are held every Tuesday at 5pm. These meetings will involve discussing and showcasing individual updates to the project. 
+\item Development meetings will be organised at periodic intervals. They will involve working together to code certain aspects of the system. These will be necessary especially when testing of the system features implemented is needed.
+\item Skype/virtual meetings will be organised on-demand and if needed between physical meetings, especially when any major issue needs to be escalated. 
+\item There is also a What'sApp group for communication. This provides an on-demand, always available, easy-access chat platform for the group members to communicate with each other. Generally, meetings are organised in this group chat.
+\end{itemize}
+Each member will be responsible for coding, testing and code reviewing of the project. This means there will be no designated roles for each person in the team. However, certain members will be focussed on certain aspects of the projects (i.e. certain people will work on the UIs and some people will be responsible for managing the server). The individuals designated to working on each feature are yet to be decided. The GitHub coordinator will be Sagar Mohan.
+
+GitHub’s feature branches will allow the team members to work on different parts of the system (e.g. two feature branches will be created for the UI of the system, one for the web client and one for the Android client), and then, as each developer finishes working on said feature, that feature can be pushed to the central repository. Before this happens though, the developer working on the feature would need to submit a pull request, letting the rest of the team know that they are done working on that specific feature. Other developers in the team will receive the pull request and then they can decide to make changes if they wish, or integrate the feature into the project.
+
+The use of this GitHub workflow would mean that conflicts can be resolved as the code can be reviewed by each person in the team. In terms of conflicting ideas on the implementation and requirements of the system, open discussions will be held during meetings where an individual may raise any concerns/new ideas they would have, and a vote will be held where the majority consensus prevails.
+
+\subsection{Peer assessment handling}
+
+For handling peer assessments we would have regular code reviews by atleast 2 members of the group before merging any code to the master branch of the GitHub repository. This would ensure that any major/minor bugs are avoided early. Also, through this everyone could keep a track of what others are contributing to the code. We have an active google doc where everyone add their findings, comments and suggestions which we discuss in team meetings. Thus, we have a track of everyone's contribution.
+
+While working together on the project conflicts may arise due to various reasons. Few of the potential reasons could be:
+\begin{itemize}
+\item Difference of opinions on prioritization
+\item Technical and design disagreements
+\item Disagreements on schedule or timeline
+\item Lack of consensus on unified process methodologies
+\end{itemize}
+In order to tackle such situations few solutions that we expect to adopt to resolve such conflicts are:
+\begin{itemize}
+\item Open group discussions so that everyone can put their point forward along with supporting arguments so that everyone gets to voice their opinions
+\item Studying the problem well and collecting relevant information to solve it
+\item Mutual cooperation and taking ownership of any proposed idea
+\item Having a consensus on the decision taken by the group and abiding by it
+\end{itemize}
+
+% to insert images
+\section{Project Organisation}
+
+
+
+
+
+
+
+
+
+
+
+% to insert images
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=0.7]{Plot/PD_payoff.png}
+%\caption{Payoff matrix for the Prisoner's Dilemma game}
+%\label{PD_payoff}
+%\end{figure}
+
+
+
+%
+%\clearpage
+%\begin{thebibliography}{1}
+%
+%  \bibitem{Axelrod} R. Axelrod, W. D. Hamilton {\em The Evolution of Cooperation}  Science, New Series, Vol. 211, No. 4489 (Mar. 27, 1981), pp. 1390-1396 
